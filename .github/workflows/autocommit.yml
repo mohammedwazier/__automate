@@ -44,13 +44,11 @@ jobs:
           
           git commit -m "${arr[$rand]}"
           
-          git config --global --add safe.directory /github/workspace
-          
       - name: GitHub Push
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@master
         with:
           force: true
-#           directory: "."
+          directory: "."
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
 
